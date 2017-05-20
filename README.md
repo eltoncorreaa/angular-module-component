@@ -5,8 +5,6 @@ A simple Spring-Boot web application with Angular 1.6.3 using component module  
 
 #### To run Application: 
 
-mvn clean install
-
 mvn spring-boot:run
 
  
