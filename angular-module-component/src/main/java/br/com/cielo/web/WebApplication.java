@@ -11,14 +11,10 @@ public class WebApplication extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(final ViewControllerRegistry registry) {
         registry.addViewController("/web").setViewName("forward:/views/index.html");
-        /*registry.addViewController("/jsp/list").setViewName("list");
-        registry.addViewController("/jsp/form").setViewName("form");
-        registry.addViewController("/jsp/modalConfirm").setViewName("modalConfirm");*/
     }
 
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        //registry.addResourceHandler("/web/**").addResourceLocations("/web/");
     }
 
     public static void main(final String[] args) {
