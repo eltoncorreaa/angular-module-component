@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-  <groupId>br.com.cielo.web</groupId>
-  <artifactId>web</artifactId>
+  <groupId>br.com.elton.app</groupId>
+  <artifactId>angular-module-component</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
 
-	<name>demo</name>
+	<name>angular-module-component</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -61,11 +61,6 @@
 			<version>LATEST</version>
         </dependency>
 
-        <dependency>
-        	<groupId>jstl</groupId>
-        	<artifactId>jstl</artifactId>
-        	<version>1.2</version>
-        </dependency>
   </dependencies>
   
 </project>
