@@ -21,30 +21,6 @@ function insertDatePicker(idInputDate){
 	    });  
 }
 
-function readyFormEmpresa() {
-	$(document).ready(function() {
-		insertPagination();
-	});
-};
-
-function insertPagination() {
-	$('#tableEmpresa').footable();
-
-	$('.clear-filter').click(function(e) {
-		e.preventDefault();
-		$('table.table-bordered').trigger('footable_clear_filter');
-		$('.filter-status').val('');
-	});
-
-	$('.filter-status').change(function(e) {
-		e.preventDefault();
-		var filter = $(this).val();
-		$('#filter').val($(this).text());
-		$('table.table-bordered').trigger('footable_filter', {
-			filter : filter
-		});
-	});
-};
 
 function handleExceptionsInForm(data){
 	var indice =0;

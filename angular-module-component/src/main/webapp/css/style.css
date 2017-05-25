@@ -223,7 +223,7 @@ a{ color:#014a78;}
 .navbar-inner {
 	background: none !important;
 	filter: none;
-	background-color: #00A9EC !important; 
+	background-color: #A0522D !important; 
 	border: 0;
 	border-radius: 0;
 	box-shadow:0;
@@ -242,22 +242,22 @@ a{ color:#014a78;}
 /* cor preta ao passar o mouse emcima do menu */
 .navbar .nav > li > a:hover {
     color: #fff;
-    background-color: #0789D2;
+    background-color: black;
 }
 
 /* cor preta do conteudo do submenu ao clicar para abrir */
 .navbar .nav .dropdown-menu,
 .navbar .nav .dropdown-menu > li > a {
-	background-color: #00A9EC;
+	background-color: #A0522D;
 	color: #ffffff;
 }
 
 /* cor marrom ao passar o mouse emcima do submenu */
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
-    color: #00A9EC;
+    color: black;
     text-decoration: none;
     background-image: none;
-    background-color: #0789D2 !important;
+    background-color: black !important;
 }
 /* cor da seta que liga o menu ao submenu */
 .navbar .nav > li > .dropdown-menu:after {
@@ -265,8 +265,8 @@ a{ color:#014a78;}
 }
 /* cor do menu depois de clicavel para abrir o submenu */
 .navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-     color: #ffffff;
-    background-color: #0789D2;
+    color: #ffffff;
+    background-color: black;
 }
 .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
     background-color: #014a78;

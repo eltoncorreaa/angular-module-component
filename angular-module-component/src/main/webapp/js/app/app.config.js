@@ -13,7 +13,13 @@ angular.
         }).
         when('/admin/integracao-star-sec', {
           template: '<integracao-star-sec></integracao-star-sec>'
-        }).        
+        }).
+        when('/company/list', {
+            template: '<company-list></company-list>'
+        }).
+        when('/company/create', {
+            template: '<company-create></company-create>'
+        }).
         otherwise('/login');
     }
   ]);
