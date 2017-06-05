@@ -1,0 +1,99 @@
+<div class="container-fluid">
+
+	<breadcrumb param="Consultar Empresa"></breadcrumb>
+
+	<titulo param="Consultar Empresa"></titulo>
+
+	<div class="row-fluid">
+		<div class="span3">
+			<label for="nomeEmpresa">Nome</label> <input type="text"
+				class="span10" id="idNomeEmpresa"
+				ng-model="$ctrl.companyDTO.fantasyName" placeholder="Nome empresa">
+		</div>
+
+		<div class="span3">
+			<label for="razaoSocial">Razão Social</label> <input type="text"
+				class="span10" id="idRazaoSocial"
+				ng-model="$ctrl.companyDTO.socialReason">
+		</div>
+
+		<div class="span3">
+			<label for="cnpj">Cnpj</label> <input type="text" class="span10"
+				id="idCnpj" ng-model="$ctrl.companyDTO.cnpj">
+		</div>
+
+		<div class="span3">
+			<label for="inscricaoEstadual">Inscrição Estadual</label> <input
+				type="text" id="idInscricaoEstadual" class="span10"
+				ng-model="$ctrl.companyDTO.stateInscription" />
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span3">
+			<label for="dataCriacao">Data Criação</label> <input type="text"
+				class="span10" id="idDataCriacao"
+				ng-model="$ctrl.companyDTO.creationTime">
+			<script type="text/javascript" charset="utf-8">
+				readyFormAndInsertDatePickers('idDataCriacao');
+			</script>
+		</div>
+	</div>
+
+	<fieldset>
+		<div class="row-fluid">
+			<div class="controls">
+				<button id="btnPesquisar" type="button" class="btn" ng-click="$ctrl.findByFilter();">Pesquisar</button>
+				<button id="btnIncluir" class="btn btn-primary" type="button" ng-click="$ctrl.redirectPersist();">Incluir</button>
+			</div>
+		</div>
+	</fieldset>
+	</br>
+
+	<table class="table table-bordered">
+		<tr>
+			<th>Nome Fantasia</th>
+			<th>Razão Social</th>
+			<th>Cnpj</th>
+			<th>Inscrição Estadual</th>
+			<th>Data Criação</th>
+			<th style="text-align: center;">Ações</th>
+		</tr>
+		<tr ng-repeat="e in $ctrl.listCompany">
+			<td>{{e.fantasyName}}</td>
+			<td>{{e.socialReason}}</td>
+			<td>{{e.cnpj}}</td>
+			<td>{{e.stateInscription}}</td>
+			<td>{{e.creationTime}}</td>
+			<td style="text-align: center;">
+			<a href="" ng-click="empresa.configurarModalEdicao('modalEditEmpresa',e.id);" title="Editar"> 
+			<img src="../imgs/btn_editar.jpg" width="18px" height="18px" />
+			</a> 
+			<a href="" title="Excluir" ng-click="$ctrl.removeCompany(e.id);"> 
+			<img src="../imgs/btn_excluir.png" width="18px" height="18px" />
+			</a>
+			</td>
+		</tr>
+	</table>
+
+	<button id="back" type="button" class="btn" onclick="" title="Voltar">Voltar</button>
+
+	<div id="idModalConfirm" class="modal fade" role="dialog"
+		style="display: none;">
+		<div class="modal-dialog modal-sm">
+			<!-- Modal content -->
+			<div class="row-fluid" align="center">
+				<fieldset>
+					<legend> Deseja confirmar a operação ? </legend>
+					<button id="btnConfirmModalBaixa" type="button"
+						class="btn btn-primary" ng-click="$ctrl.efetuarBaixa();">
+						Sim</button>
+					<button id="btnNao" class="btn" type="button"
+						ng-click="$ctrl.closeModalConfirm();">Não</button>
+					<br />
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+</div>
