@@ -98,7 +98,7 @@ ul.barraFerramentas {
 .messageErrorTitle {
 	background-repeat: no-repeat;
 	background-position: left top;
-	background-image: url(../imagens/Parar.gif);
+	background-image: url(../imgs/Parar.gif);
 	color: #ce0a0a;
 }
 .errorMessageBox {
@@ -118,7 +118,7 @@ ul.barraFerramentas {
 	margin: 0;
 	padding: 35px 50px;
 	width: 650px;
-	background-image: url(../imagens/bg_conteudo_box.jpg);
+	background-image: url(../imgs/bg_conteudo_box.jpg);
 }
 
 .messageContent p {
@@ -139,13 +139,13 @@ ul.barraFerramentas {
 	border: 1px solid #b8d2a3;
 	color: #235013;
 	background-color: #eafbdc;
-	background-image: url(../imagens/ico_sucesso.gif);
+	background-image: url(../imgs/ico_sucesso.gif);
 	background-repeat: no-repeat;
 	background-position: 12px 12px;
 }
 
 .atencao {
-	background: #fffc9e url(../imagens/ico_alerta.gif)
+	background: #fffc9e url(../imgs/ico_alerta.gif)
 		no-repeat 12px 12px;
 	border: 1px solid #d4c3a0;
 	color: #c38900;
@@ -156,12 +156,12 @@ ul.barraFerramentas {
 	border: 1px solid #dab4ad;
 	color: #960606;
 	background-color: #fde4df;
-	background: #ffe9e9 url(../imagens/ico_erro.gif) no-repeat
+	background: #ffe9e9 url(../imgs/ico_erro.gif) no-repeat
 		12px 13px;
 }
 
 .informacao {
-	background: #eaebeb url(../imagens/ico_informacao.gif)
+	background: #eaebeb url(../imgs/ico_informacao.gif)
 		no-repeat 12px 12px;
 	border: 1px solid #D1D1D1;
 	color: #666666;
@@ -169,7 +169,7 @@ ul.barraFerramentas {
 }
 
 .questionamento {
-	background: #e2f7fe url(../imagens/ico_pergunta.gif)
+	background: #e2f7fe url(../imgs/ico_pergunta.gif)
 		no-repeat 12px 12px;
 	border: 1px solid #a3b2d2;
 	color: #101f5c;

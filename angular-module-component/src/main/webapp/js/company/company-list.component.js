@@ -5,14 +5,15 @@ angular.module('cnv-web').component('companyList', {
 		var SERVER = "http://localhost:9090";
 		this.companyDTO = {};
 		this.recoveredCompany;
+		this.listCompany = [];
 		
 		this.redirectPersist = function() {
-			window.location = "/angular-tags-spring/company/create/";
+			window.location = "/web#!/company/create/";
 		};
 		
 		this.updateCompany = function() {
 			var that = this;
-	    	$http.put(SERVER +'/company/', this.recoveredCompany).then(function(data){
+	    	$http.put(SERVER +'/company/', that.recoveredCompany).then(function(data){
 	    		that.onFormLoad();
 	    		$("#modalEditEmpresa").modal("hide");
 	    	}).catch(function(data) {
@@ -42,12 +43,11 @@ angular.module('cnv-web').component('companyList', {
 		};
 
 		this.onFormLoad = function() {
-			 var that = this;			 
-			 that.listCompany = [];
+			 var that = this;
 			 $http.get('http://localhost:9090/company/').then(function(data) {
 			      that.listCompany = data.data;
 			 }).catch(function(data) {
-		    	alert('Erro!');
+		    	console.log('Erro!');
 		     });
 		};
 		this.onFormLoad();

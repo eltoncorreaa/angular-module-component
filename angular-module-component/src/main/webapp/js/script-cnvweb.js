@@ -24,19 +24,15 @@ function insertDatePicker(idInputDate){
 
 function handleExceptionsInForm(data){
 	var indice =0;
-	data.error = [ "O período inicial não pode ser maior que o período final" ];
-	var errors = data.error || data.listError;
-
-	if(errors.length > 0){
-		var divMsgsErro = $("#formPrincipal").find("div#divMsgsErro");
-		divMsgsErro.removeAttr("style");
+	var divMsgsErro = $("#divMsgsErro");
+	var tagUl = divMsgsErro.find("ul");		
+	tagUl.empty();
 	
-		var tagUl = divMsgsErro.find("ul");		
-		tagUl.empty();
-		
-		for(indice; indice < errors.length; indice++){
+	if(data.error.length > 0){		
+		divMsgsErro.removeAttr("style");		
+		for(indice; indice < data.error.length; indice++){
 			var tagLi = document.createElement("li");
-			tagLi.appendChild(document.createTextNode(errors[indice]));			
+			tagLi.appendChild(document.createTextNode(data.error[indice]));			
 			tagUl.append(tagLi);  
 		}
 	}
