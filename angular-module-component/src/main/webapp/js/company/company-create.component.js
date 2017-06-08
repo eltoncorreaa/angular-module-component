@@ -14,7 +14,8 @@ angular.module('cnv-web').component('companyCreate', {
 			var that = this;
 	    	$http.post(SERVER +'/company/', that.companyDTO).then(function(data){
 	    		console.log("sucesso!");
-	    		that.redirectList();
+	    		$scope.companyD = "xx";
+	    		$location.path('/company/list/:1');
 	    	}).catch(function(data) {
 	    		handleExceptionsInForm(data.data);
 	        });

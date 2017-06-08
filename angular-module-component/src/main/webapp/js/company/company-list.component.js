@@ -1,11 +1,12 @@
 angular.module('cnv-web').component('companyList', {
-	templateUrl : 'views/company/list.html',
+	templateUrl : 'views/company/list.html',	
 	controller : function CompanyListController($http, $scope, $location) {
 		
 		var SERVER = "http://localhost:9090";
 		this.companyDTO = {};
 		this.recoveredCompany;
-		this.listCompany = [];
+		this.testee = $scope.companyD;
+		this.listCompany = [];		
 		
 		this.redirectPersist = function() {
 			window.location = "/web#!/company/create/";
