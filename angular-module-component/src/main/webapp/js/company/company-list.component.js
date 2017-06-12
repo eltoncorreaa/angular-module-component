@@ -5,7 +5,6 @@ angular.module('cnv-web').component('companyList', {
 		var SERVER = "http://localhost:9090";
 		this.companyDTO = {};
 		this.recoveredCompany;
-		this.testee = $scope.companyD;
 		this.listCompany = [];		
 		
 		this.redirectPersist = function() {
@@ -18,17 +17,16 @@ angular.module('cnv-web').component('companyList', {
 	    		that.onFormLoad();
 	    		$("#modalEditEmpresa").modal("hide");
 	    	}).catch(function(data) {
-	    		handleExceptionsInModal(data);
+	    		handleExceptionsInModal(data.data);
 	        });
 	  	};
 
-		 this.configurarModalEdicao = function(idModal, idEmpresa) {  		
-		  		var that = this;
-		  		that.recoveredCompany;
-				 $http.get(SERVER + '/company/' + idEmpresa).then(function(data) {
-				      that.recoveredCompany = data;
-				      $("#modalEditEmpresa").modal("show");
-				  });
+		 this.configurarModalEdicao = function(idEmpresa) {  		
+		  	var that = this;
+			 $http.get(SERVER + '/company/' + idEmpresa).then(function(data) {
+			 that.recoveredCompany = data.data;
+			      $("#modalEditEmpresa").modal("show");
+			 });
 		 };
 
 	  	this.removeCompany = function(id) {

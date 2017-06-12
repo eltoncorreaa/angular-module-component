@@ -45,8 +45,10 @@
 	<fieldset>
 		<div class="row-fluid">
 			<div class="controls">
-				<button id="btnPesquisar" type="button" class="btn" ng-click="$ctrl.findByFilter();">Pesquisar</button>
-				<button id="btnIncluir" class="btn btn-primary" type="button" ng-click="$ctrl.redirectPersist();">Incluir</button>
+				<button id="btnPesquisar" type="button" class="btn"
+					ng-click="$ctrl.findByFilter();">Pesquisar</button>
+				<button id="btnIncluir" class="btn btn-primary" type="button"
+					ng-click="$ctrl.redirectPersist();">Incluir</button>
 			</div>
 		</div>
 	</fieldset>
@@ -67,33 +69,70 @@
 			<td>{{e.cnpj}}</td>
 			<td>{{e.stateInscription}}</td>
 			<td>{{e.creationTime}}</td>
-			<td style="text-align: center;">
-			<a href="" ng-click="empresa.configurarModalEdicao('modalEditEmpresa',e.id);" title="Editar"> 
-			<img src="../imgs/btn_editar.jpg" width="18px" height="18px" />
-			</a> 
-			<a href="" title="Excluir" ng-click="$ctrl.removeCompany(e.id);"> 
-			<img src="../imgs/btn_excluir.png" width="18px" height="18px" />
-			</a>
-			</td>
+			<td style="text-align: center;"><a href=""
+				ng-click="$ctrl.configurarModalEdicao(e.id);" title="Editar"> <img
+					src="../imgs/btn_editar.jpg" width="18px" height="18px" />
+			</a> <a href="" title="Excluir" ng-click="$ctrl.removeCompany(e.id);">
+					<img src="../imgs/btn_excluir.png" width="18px" height="18px" />
+			</a></td>
 		</tr>
 	</table>
 
 	<button id="back" type="button" class="btn" onclick="" title="Voltar">Voltar</button>
 
-	<div id="idModalConfirm" class="modal fade" role="dialog"
-		style="display: none;">
-		<div class="modal-dialog modal-sm">
-			<!-- Modal content -->
-			<div class="row-fluid" align="center">
-				<fieldset>
-					<legend> Deseja confirmar a operação ? </legend>
-					<button id="btnConfirmModalBaixa" type="button"
-						class="btn btn-primary" ng-click="$ctrl.efetuarBaixa();">
-						Sim</button>
-					<button id="btnNao" class="btn" type="button"
-						ng-click="$ctrl.closeModalConfirm();">Não</button>
-					<br />
-				</fieldset>
+	<div id="modalEditEmpresa" class="modal fade" role="dialog"
+		style="display: none">
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Alterar Empresa</h4>
+				</div>
+				<mensagens></mensagens>
+				<div class="modal-body">
+					<div class="row-fluid">
+						<div class="span6">
+							<label for="nomeEmpresa">Nome</label> <input type="text"
+								class="span10" id="idNomeEmpresaEdit"
+								ng-model="$ctrl.recoveredCompany.fantasyName">
+						</div>
+						<div class="span6">
+							<label for="razaoSocial">Razão Social</label> <input type="text"
+								class="span10" id="idRazaoSocialEdit"
+								ng-model="$ctrl.recoveredCompany.socialReason">
+						</div>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span6">
+							<label for="cnpj">Cnpj</label> <input type="text" class="span10"
+								id="idCnpjEdit" ng-model="$ctrl.recoveredCompany.cnpj">
+						</div>
+						<div class="span6">
+							<label for="inscricaoEstadual">Inscrição Estadual</label> <input
+								type="text" id="idInscricaoEstadualEdit" class="span10"
+								ng-model="$ctrl.recoveredCompany.stateInscription" />
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span6">
+							<label for="dataCriacao">Data Criação</label> <input type="text"
+								class="span10" id="idDataCriacaoEdit"
+								ng-model="$ctrl.recoveredCompany.creationTime">
+							<script type="text/javascript" charset="utf-8">
+								readyFormAndInsertDatePickers('idDataCriacaoEdit');
+							</script>
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button id="salvar" class="btn btn-primary" type="button"
+						ng-click="$ctrl.updateCompany();">Salvar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Voltar</button>
+				</div>
 			</div>
 		</div>
 	</div>

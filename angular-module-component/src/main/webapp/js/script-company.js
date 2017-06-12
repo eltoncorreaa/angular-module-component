@@ -38,6 +38,22 @@ function handleExceptionsInForm(data){
 	}
 };
 
+function handleExceptionsInModal(data){
+	var indice =0;
+	var divMsgsErro = $("#modalEditEmpresa").find("div#divMsgsErro");
+	var tagUl = divMsgsErro.find("ul");		
+	tagUl.empty();
+	
+	if(data.error.length > 0){		
+		divMsgsErro.removeAttr("style");		
+		for(indice; indice < data.error.length; indice++){
+			var tagLi = document.createElement("li");
+			tagLi.appendChild(document.createTextNode(data.error[indice]));			
+			tagUl.append(tagLi);  
+		}
+	}
+};
+
 function clearMsgsErrorForm(){
 	var divMsgsErro = $("#formPrincipal").find("div#divMsgsErro");
 	divMsgsErro.css("display","none");
