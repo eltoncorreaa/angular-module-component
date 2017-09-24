@@ -6,7 +6,7 @@ angular.module('cnv-web').component('companyCreate', {
 		this.companyDTO = {};
 		
 		this.redirectList = function() {
-			window.location = "/web#!/company/list/";
+			window.location = "#!/company/list/";
 			showMsgSucesso();
 		};		
 		

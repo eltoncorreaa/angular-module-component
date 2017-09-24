@@ -8,7 +8,7 @@ angular.module('cnv-web').component('companyList', {
 		this.listCompany = [];		
 		
 		this.redirectPersist = function() {
-			window.location = "/web#!/company/create/";
+			window.location = "/#!/company/create/";
 		};
 		
 		this.updateCompany = function() {
