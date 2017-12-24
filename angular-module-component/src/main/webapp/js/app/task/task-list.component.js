@@ -1,4 +1,4 @@
-angular.module('dellas-web').component('taskList', {
+angular.module('elton-web').component('taskList', {
 	templateUrl : 'views/task/list.html',	
 	controller : function TaskListController($http, $scope, $location) {
 		

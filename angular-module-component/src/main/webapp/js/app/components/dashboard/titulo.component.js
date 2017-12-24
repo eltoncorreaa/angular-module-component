@@ -1,5 +1,5 @@
 angular.
-  module('dellas-web').
+  module('elton-web').
   component('titulo', {
     templateUrl:'templates/titulo.html',
     controller: function TituloController() {

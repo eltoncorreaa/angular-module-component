@@ -1,5 +1,5 @@
 angular.
-  module('dellas-web').
+  module('elton-web').
   component('breadcrumb', {
     templateUrl:'templates/breadcrumb.html',
     controller: function BreadcrumbController() {

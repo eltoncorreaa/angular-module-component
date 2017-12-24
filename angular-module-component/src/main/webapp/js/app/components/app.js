@@ -1,1 +1,1 @@
-angular.module('dellas-web', ['ngRoute']);
+angular.module('elton-web', ['ngRoute']);

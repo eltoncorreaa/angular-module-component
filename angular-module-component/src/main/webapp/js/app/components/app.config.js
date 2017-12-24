@@ -1,5 +1,5 @@
 angular.
-  module('dellas-web').
+  module('elton-web').
   config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');

@@ -1,4 +1,4 @@
-angular.module('dellas-web').component('taskCreate', {
+angular.module('elton-web').component('taskCreate', {
 	templateUrl : 'views/task/create.html',	
 	controller : function TaskCreateController($http, $scope, $location) {
 		

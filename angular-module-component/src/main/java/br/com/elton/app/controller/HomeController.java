@@ -1,4 +1,4 @@
-package br.com.dellas.app.controller;
+package br.com.elton.app.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
