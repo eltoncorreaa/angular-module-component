@@ -1,4 +1,4 @@
-package br.com.elton.app;
+package com.elton.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
