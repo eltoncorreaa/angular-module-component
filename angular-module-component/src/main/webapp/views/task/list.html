@@ -1,0 +1,95 @@
+
+<breadcrumb param="Consult Task"></breadcrumb>
+
+<titulo param="Consult Task" displaytoolbar="true"></titulo>
+
+<!-- <div ng-include="'/templates/messagesInclusionPageTask.html'"></div> -->
+
+<div class="row">
+	<div class="col-lg-6">		
+		<label for="nameTask">Name:</label> 
+		<input type="text" class="form-control"/>		
+	</div>	
+
+	<div class="col-lg-6">
+		<label for="startDate">Start Date:</label> 
+		<div class='input-group date' id='datePicker1'>
+		<input type="text" class="form-control"/>
+		<span class="input-group-addon">
+             <span class="glyphicon glyphicon-calendar"></span>
+         </span>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" charset="utf-8">
+	readyFormAndInsertDatePickers();
+</script>
+</br>
+<fieldset>
+	<div class="controls">
+		<button id="btnSearch" type="button" class="btn" ng-click="$ctrl.findByFilter();">Search</button>
+		<button id="btnIncluide" type="button" class="btn btn-primary" ng-click="$ctrl.redirectCreate();">Include</button>
+	</div>
+
+</fieldset>
+</br>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Start Date</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="e in $ctrl.listTask">
+			<td>{{e.name}}</td>
+			<td>{{e.startDate}}</td>
+			<td><button type="button" class="btn btn-xs" ng-click="$ctrl.configurarModalEdicao(e.id);"><span class="glyphicon glyphicon-edit"></span></button></td>
+			<td><button type="button" class="btn btn-xs" ng-click="$ctrl.removeTask(e.id);"><span class="glyphicon glyphicon-remove"></span></button></td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="controls">
+		<button id="btnVoltar" type="button" class="btn">Voltar</button>
+</div>
+
+<div id="modalEditTask" class="modal fade" role="dialog"
+		style="display: none">
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Update Task</h4>
+				</div>
+				
+				<div ng-include="'/templates/messagesUpdatePageTask.html'"></div>
+				
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-6">
+							<label for="nomeEmpresa">Name:</label> <input type="text"
+								class="form-control" id="idNameTask"
+								ng-model="$ctrl.recoveredTask.name">
+						</div>
+						<div class="col-lg-6">
+							<label for="nomeEmpresa">Start Date:</label> <input type="text"
+								class="form-control" id="idStartDate"
+								ng-model="$ctrl.recoveredTask.startDate">
+						</div>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button id="salvar" class="btn btn-primary" type="button"
+						ng-click="$ctrl.updateTask();">Salvar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						Voltar</button>
+				</div>
+			</div>
+		</div>
+	</div>

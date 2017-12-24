@@ -1,0 +1,10 @@
+<div class="alert alert-danger" ng-if="$ctrl.listErrorsPageUpdate.length > 0">
+ <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+ Check the following errors:
+ <ul><li ng-repeat="e in $ctrl.listErrorsPageUpdate">{{e}}</li></ul>
+</div>
+
+<div class="alert alert-success" role="alert" ng-if="$ctrl.listMsgSucessPageUpdate">
+  <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+   {{$ctrl.listMsgSucessPageUpdate}}
+</div>

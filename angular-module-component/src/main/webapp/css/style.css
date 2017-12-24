@@ -1,0 +1,71 @@
+@charset "UTF-8";
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-weight: normal;
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Trebuchet MS', sans-serif;
+}
+strong {
+	font-family: 'Trebuchet MS', sans-serif;
+}
+body {
+	margin: 0;
+	background-color: #F3F3F8;
+	/* background-image: url(../img/bg_body.jpg);
+	background-repeat: repeat-x;	 font-size: 1em; */
+}
+
+.header {
+	/* background: url(../img/header.png) no-repeat center top; */
+	max-width: 1000px;
+	height: 135px;
+	margin: 0 auto;
+	clear: both;
+
+}
+
+.container-fluid {
+	margin:0 auto;
+	max-width: 980px;
+	background-color: #fdfdfd;	
+	/*
+	background-color: #fdfdfd;
+	border:2px solid #E3E3E3;
+	padding-top:20px;
+	border-radius: 5px 5px 5px 5px;
+	width:1000px; 71.429em; */
+}
+
+ul.barraFerramentas {
+	margin: 20px 0 0 0;
+	display: table-cell;
+	vertical-align: bottom;
+}
+
+/* cor marrom do menu */
+.navbar-default {
+    background-color: #A0522D;
+}
+
+/* cor branca das letras do menu */
+nav.navbar-default a{
+	color: #ffffff !important;
+}
+
+/* cor azul do conteudo do submenu ao clicar para abrir */
+.navbar .nav .dropdown-menu,
+.navbar .nav .dropdown-menu > li > a {
+	background-color: #A0522D;
+	color: #ffffff;
+}
+
+/* cor do menu depois de clicavel para abrir o submenu */
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    color: #ffffff;
+    background-color: #A0522D;
+}

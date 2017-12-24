@@ -1,0 +1,35 @@
+
+<breadcrumb param="Create Task"></breadcrumb>
+
+<titulo param="Create Task" displaytoolbar=""></titulo>
+
+<div ng-include="'/templates/messagesInclusionPageTask.html'"></div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<label for="nameTask">Name:</label> 
+		<input type="text" class="form-control" ng-model="$ctrl.task.name" />
+	</div>
+
+	<div class="col-lg-6">
+		<label for="startDate">Start Date:</label>
+		<div class='input-group date' id='datePicker1'>
+			<input type="text" class="form-control" ng-model="$ctrl.task.startDate"/> 
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-calendar"></span>
+			</span>
+		</div>
+	</div>
+</div>
+
+</br>
+<fieldset>
+	<div class="controls">
+		<button id="btnCreate" class="btn btn-primary" type="button" ng-click="$ctrl.create();">Save</button>
+		<button id="btncBack" class="btn" type="button" ng-click="$ctrl.redirectList();">Back</button>
+	</div>
+</fieldset>
+
+<script type="text/javascript" charset="utf-8">
+	readyFormAndInsertDatePickers();
+</script>
