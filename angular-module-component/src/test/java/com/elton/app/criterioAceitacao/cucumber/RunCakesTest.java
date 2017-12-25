@@ -1,4 +1,4 @@
-package br.com.elton.app.criterioAceitacao.cucumber;
+package com.elton.app.criterioAceitacao.cucumber;
 
 import org.junit.runner.RunWith;
 
