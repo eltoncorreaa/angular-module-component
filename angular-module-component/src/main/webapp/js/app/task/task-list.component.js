@@ -6,34 +6,24 @@ angular.module('elton-web').component('taskList', {
 		
 		var that = this;
 		this.listTask = [];
-		this.recoveredTask;
-		this.listErrorsPageUpdate = [];
-		this.listMsgSucessPageUpdate;
+		
+		this.onFormLoad = function() {
+			 $http.get(SERVER + '/task').then(function(data) {
+			      that.listTask = data.data;
+			 }).catch(function(data) {
+		    	console.log('Erro!');
+		     });
+		};
+		this.onFormLoad();
 		
 		this.redirectCreate = function(){
-			$location.path( '/task/create')
+			$location.path( '/task/create');
 		};
 		
-		this.updateTask = function() {
-	    	$http.put(SERVER +'/task/', that.recoveredTask).then(function(data){
-	    		that.onFormLoad();
-	    		that.listMsgSucessPageUpdate = "Successful Updated!";
-	    		that.clearWhenSucess();
-	    	}).catch(function(data) {
-	    		that.listErrorsPageUpdate = data.data.error;
-	    		that.clearWhenError();
-	        });
-	  	};
-
-		 this.configurarModalEdicao = function(idTask) {
-			 $http.get(SERVER + '/task/' + idTask).then(function(data) {
-				 that.recoveredTask = data.data;
-				 that.clearWhenSucess();
-				 that.clearWhenError();
-				 $("#modalEditTask").modal("show");
-			 });
+		this.redirectEdit = function(idTask) {
+			 $location.path( '/task/edit/'+idTask);
 		 };
-		 
+			 
 		this.removeTask = function(id) {
 			$http.delete(SERVER + '/task/' + id).then(function(data){
 				that.onFormLoad();			
@@ -48,22 +38,5 @@ angular.module('elton-web').component('taskList', {
 		    	console.log('Erro!');
 		     });
 		};
-		
-		this.onFormLoad = function() {
-			 $http.get(SERVER + '/task').then(function(data) {
-			      that.listTask = data.data;
-			 }).catch(function(data) {
-		    	console.log('Erro!');
-		     });
-		};
-		this.onFormLoad();
-		
-		this.clearWhenSucess = function(){
-	  		that.listErrorsPageUpdate = [];
-	  	};
-	  	
-	  	this.clearWhenError = function(){
-	  		that.listMsgSucessPageUpdate = "";
-	  	};
 	}
 });

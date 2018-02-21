@@ -8,6 +8,9 @@ angular.
         when('/task/list', {
             template: '<task-list></task-list>'
         }).
+        when('/task/edit/:id', {
+            template: '<task-edit></task-edit>'
+        }).
         when('/task/create', {
             template: '<task-create></task-create>'
         }).
